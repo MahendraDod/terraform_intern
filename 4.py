@@ -1,4 +1,4 @@
-import tkinter as ttk
+import tk as ttk
 #importing connection
 import  mysql.connector
 import boto3

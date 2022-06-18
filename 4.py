@@ -37,7 +37,7 @@ def register():
        cursor = conn.cursor()
        # Preparing SQL query to INSERT a record into the database.
        insert_stmt = (
-           "INSERT INTO REG(NAME, CONTACT, EMAIL, GENDER, CITY, STATE)"
+           "INSERT INTO test(NAME, CONTACT, EMAIL, GENDER, CITY, STATE)"
            "VALUES (%s, %s, %s, %s, %s, %s)"
        )
        if gen1==1:

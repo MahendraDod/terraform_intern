@@ -6,6 +6,9 @@ import base64
 from botocore.exceptions import ClientError
 
 
+
+app = Flask(__name__)
+
 def get_secret():
 
     secret_name = "arn:aws:secretsmanager:ap-south-1:229419693179:secret:prod/mydb/mydatabase-iiMwy9"
@@ -55,7 +58,6 @@ def get_secret():
         else:
             decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
 
-app = Flask(__name__)
  
 app.config['MYSQL_HOST'] = secret['host']
 

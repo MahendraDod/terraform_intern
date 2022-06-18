@@ -8,17 +8,17 @@ app = Flask(__name__)
 client = boto3.client('secretsmanager')
 response = client.get_secret_value(
 
-    SecretId='prod/mysql/mydatabase'
+    SecretId='prod/mydb/mydatabase'
 
 )
 secretDict = json.loads(response['SecretString'])
 
  
-app.config['MYSQL_HOST'] = secretDict['host'],
+app.config['MYSQL_HOST'] = secretDict['host']
 
-app.config['MYSQL_USER'] = secretDict['username'],
+app.config['MYSQL_USER'] = secretDict['username']
   
-app.config['MYSQL_PASSWORD'] = secretDict['password'],
+app.config['MYSQL_PASSWORD'] = secretDict['password']
  
 app.config['MYSQL_DB'] = secretDict['dbname']
  

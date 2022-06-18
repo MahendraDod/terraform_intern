@@ -59,13 +59,13 @@ def get_secret():
             decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
 
  
-app.config['MYSQL_HOST'] = secret['host']
+app.config['MYSQL_HOST'] = decoded_binary_secret['host']
 
-app.config['MYSQL_USER'] = secret['username']
+app.config['MYSQL_USER'] = decoded_binary_secret['username']
   
-app.config['MYSQL_PASSWORD'] = secret['password']
+app.config['MYSQL_PASSWORD'] = decoded_binary_secret['password']
  
-app.config['MYSQL_DB'] = secret['dbname']
+app.config['MYSQL_DB'] = decoded_binary_secret['dbname']
  
 mysql = MySQL(app)
  

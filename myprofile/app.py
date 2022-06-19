@@ -22,13 +22,13 @@ else:
 secretdict = json.loads(secret)
 
  
-app.config['MYSQL_HOST'] = get_secret().secretdict['host']
+app.config['MYSQL_HOST'] = secretdict['host']
 
-app.config['MYSQL_USER'] = get_secret().secretdict['username']
+app.config['MYSQL_USER'] = secretdict['username']
   
-app.config['MYSQL_PASSWORD'] = get_secret().secretdict['password']
+app.config['MYSQL_PASSWORD'] = secretdict['password']
  
-app.config['MYSQL_DB'] = get_secret().secretdict['dbname']
+app.config['MYSQL_DB'] = secretdict['dbname']
  
 mysql = MySQL(app)
  

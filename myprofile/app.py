@@ -59,13 +59,13 @@ def get_secret():
 
 
  
-app.config['MYSQL_HOST'] = secret["host"]
+app.config['MYSQL_HOST'] = secretdict["host"]
 
-app.config['MYSQL_USER'] = secret["username"]
+app.config['MYSQL_USER'] = secretdict["username"]
   
-app.config['MYSQL_PASSWORD'] = secret["password"]
+app.config['MYSQL_PASSWORD'] = secretdict["password"]
  
-app.config['MYSQL_DB'] = secret["dbname"]
+app.config['MYSQL_DB'] = secretdict["dbname"]
  
 mysql = MySQL(app)
  

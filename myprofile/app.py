@@ -48,6 +48,7 @@ def login():
         cursor.execute(''' INSERT INTO info_table VALUES(%s,%s)''',(name,age))
         mysql.connection.commit()
         cursor.close()
+        return f"Done!!"
         
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=80)

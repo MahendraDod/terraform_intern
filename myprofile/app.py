@@ -55,7 +55,8 @@ def get_secret():
             secret = get_secret_value_response['SecretString']
         else:
             secret = decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
-    secretdict = json.loads(secret)   
+    
+secretdict = json.loads(secret)   
 
 
  

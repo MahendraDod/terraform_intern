@@ -30,15 +30,7 @@ app.config['MYSQL_PASSWORD'] = secretdict['password']
  
 app.config['MYSQL_DB'] = secretdict['dbname']
  
-mysql = MySQL(app)
- 
-def load_keras_model():
-    """Load in the pre-trained model"""
-    global model
-    model = load_model('../models/train-embeddings-rnn.h5')
-    # Required for model to work
-    global graph
-    graph = tf.get_default_graph() 
+mysql = MySQL(app) 
 
 @app.route('/form')
 def form():
@@ -58,8 +50,5 @@ def login():
         cursor.close()
         
 if __name__ == "__main__":
-    print(("* Loading Keras model and Flask starting server..."
-           "please wait until server has fully started"))
-    load_keras_model()
-    # Run app
-    app.run(host="0.0.0.0", port=80) 
+   app.run(host='0.0.0.0', port=80)
+

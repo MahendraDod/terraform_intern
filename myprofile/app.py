@@ -32,7 +32,7 @@ app.config['MYSQL_DB'] = secretdict['dbname']
  
 mysql = MySQL(app) 
 
-@app.route('/')
+@app.route('/form')
 def form():
     return render_template('form.html')
  

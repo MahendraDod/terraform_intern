@@ -55,17 +55,17 @@ def get_secret():
             secret = get_secret_value_response['SecretString']
         else:
             secret = decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
-return json.loads(secret)   
+    return json.loads(secret)   
 
 
  
-app.config['MYSQL_HOST'] = secret['host']
+app.config['MYSQL_HOST'] = secret["host"]
 
-app.config['MYSQL_USER'] = secret['username']
+app.config['MYSQL_USER'] = secret["username"]
   
-app.config['MYSQL_PASSWORD'] = secret['password']
+app.config['MYSQL_PASSWORD'] = secret["password"]
  
-app.config['MYSQL_DB'] = secret['dbname']
+app.config['MYSQL_DB'] = secret["dbname"]
  
 mysql = MySQL(app)
  

@@ -2,7 +2,6 @@ from flask import Flask,render_template, request
 from flask_mysqldb import MySQL
 import boto3
 import base64
-from botocore.exceptions import ClientError
 import json
 
 app = Flask(__name__)

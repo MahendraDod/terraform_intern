@@ -13,7 +13,7 @@ client = session.client(
 )
 
 get_secret_value_response = client.get_secret_value(
-    SecretId = "prod/mydb/database"
+    SecretId = "prod/mydb/hidatabase"
 )
 if 'SecretString' in get_secret_value_response:
     secret = get_secret_value_response['SecretString']
